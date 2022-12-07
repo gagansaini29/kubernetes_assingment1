@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: gagan
+
+  labels:
+
+    app: django-blog
+
+
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: django-blog
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: django-blog
+
+    spec:
+
+      containers:
+
+      - name: gagan
+
+        image: sainigagan29/docker_assingment:latest
+
+        ports:
+
+        - containerPort: 8000
